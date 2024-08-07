@@ -39,7 +39,7 @@
 <div
 	class="w-screen h-screen bg-ctp-base flex flex-col text-ctp-subtext0 justify-between overflow-auto"
 >
-	<div class="flex flex-row gap-4 grow">
+	<div class="flex flex-row sm:gap-4 grow">
 		<SignColumn />
 		{@render children()}
 	</div>
