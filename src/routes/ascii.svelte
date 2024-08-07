@@ -25,5 +25,5 @@
 `;
 </script>
 
-<pre class="lg:hidden block font-defaultMono leading-[12px] text-xs">{mobileAsciiText}</pre>
+<pre class="lg:hidden block font-defaultMono leading-[10px] text-[10px]">{mobileAsciiText}</pre>
 <pre class="hidden lg:block font-defaultMono leading-[16px] text-base">{asciiText}</pre>
