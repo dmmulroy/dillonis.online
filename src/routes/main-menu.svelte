@@ -26,84 +26,98 @@
 		<li class="group cursor-none hover:cursor-pointer">
 			<a
 				id="github"
-				class="flex flex-row h-full w-full p-2 focus:outline-none focus:bg-[#313346] gap-2 items-center justify-between hover:bg-[#313346]"
+				class="flex group/link flex-row h-full w-full p-2 focus:outline-none focus:bg-[#313346] gap-2 items-center justify-between hover:bg-[#313346]"
 				href="https://github.com/dmmulroy"
 				target="_blank"
 			>
 				<span class="flex flex-row gap-4 items-center"
-					><Github class="group-hover:text-[#2dba4e]" />GitHub</span
+					><Github
+						class="group-hover:text-[#2dba4e] group-focus/link:text-[#2dba4e]"
+					/>GitHub</span
 				>ggh</a
 			>
 		</li>
 		<li class="group cursor-none hover:cursor-pointer">
 			<a
 				id="twitter"
-				class="flex flex-row h-full w-full p-2 focus:outline-none focus:bg-[#313346] gap-2 items-center justify-between hover:bg-[#313346]"
+				class="group/link flex flex-row h-full w-full p-2 focus:outline-none focus:bg-[#313346] gap-2 items-center justify-between hover:bg-[#313346]"
 				href="https://x.com/dillon_mulroy"
 				target="_blank"
 			>
 				<span class="flex flex-row gap-4 items-center"
-					><TwitterIcon class="group-hover:text-[#1D9BF0]" />Twitter/𝕏</span
+					><TwitterIcon
+						class="group-hover:text-[#1D9BF0] group-focus/link:text-[#1D9BF0]"
+					/>Twitter/𝕏</span
 				>gx</a
 			>
 		</li>
 		<li class="group cursor-none hover:cursor-pointer">
 			<a
 				id="twitch"
-				class="flex flex-row h-full w-full p-2 focus:outline-none focus:bg-[#313346] gap-2 items-center justify-between hover:bg-[#313346]"
+				class="group/link flex flex-row h-full w-full p-2 focus:outline-none focus:bg-[#313346] gap-2 items-center justify-between hover:bg-[#313346]"
 				href="https://twitch.tv/dmmulroy"
 				target="_blank"
 			>
 				<span class="flex flex-row gap-4 items-center"
-					><TwitchIcon class="group-hover:text-[#6441a5]" />Twitch</span
+					><TwitchIcon
+						class="group-hover:text-[#6441a5] group-focus/link:text-[#6441a5]"
+					/>Twitch</span
 				>gt</a
 			>
 		</li>
 		<li class="group cursor-none hover:cursor-pointer">
 			<a
 				id="youtube"
-				class="flex flex-row h-full w-full p-2 focus:outline-none focus:bg-[#313346] gap-2 items-center justify-between hover:bg-[#313346]"
+				class="group/link flex flex-row h-full w-full p-2 focus:outline-none focus:bg-[#313346] gap-2 items-center justify-between hover:bg-[#313346]"
 				href="https://youtube.com/dmmulroy"
 				target="_blank"
 			>
 				<span class="flex flex-row gap-4 items-center"
-					><YoutubeIcon class="group-hover:text-[#FF1A1A]" />YouTube</span
+					><YoutubeIcon
+						class="group-hover:text-[#FF1A1A] group-focus/link:text-[#FF1A1A]"
+					/>YouTube</span
 				>gyt</a
 			>
 		</li>
 		<li class="group cursor-none hover:cursor-pointer">
 			<a
 				id="linkedin"
-				class="flex flex-row h-full w-full p-2 focus:outline-none focus:bg-[#313346] gap-2 items-center justify-between hover:bg-[#313346]"
+				class="group/link flex flex-row h-full w-full p-2 focus:outline-none focus:bg-[#313346] gap-2 items-center justify-between hover:bg-[#313346]"
 				href="https://www.linkedin.com/in/dillon-mulroy"
 				target="_blank"
 			>
 				<span class="flex flex-row gap-4 items-center"
-					><LinkedinIcon class="group-hover:text-[#0a66c2]" />LinkedIn</span
+					><LinkedinIcon
+						class="group-hover:text-[#0a66c2] group-focus/link:text-[#0a66c2]"
+					/>LinkedIn</span
 				>gli
 			</a>
 		</li>
 		<li class="group cursor-none hover:cursor-pointer">
 			<a
 				id="talks"
-				class="flex flex-row h-full w-full p-2 focus:outline-none focus:bg-[#313346] gap-2 items-center justify-between hover:bg-[#313346]"
+				class="group/link flex flex-row h-full w-full p-2 focus:outline-none focus:bg-[#313346] gap-2 items-center justify-between hover:bg-[#313346]"
 				href="https://dillonis.online/talks"
 				target="_blank"
 			>
 				<span class="flex flex-row gap-4 items-center"
-					><MicVocalIcon class="group-hover:text-ctp-peach" />Conference Talks</span
+					><MicVocalIcon
+						class="group-hover:text-ctp-peach group-focus/link:text-ctp-peach "
+					/>Conference Talks</span
 				>gct</a
 			>
 		</li>
 		<li class="group cursor-none hover:cursor-pointer">
 			<a
 				id="email"
-				class="flex flex-row h-full w-full p-2 focus:outline-none focus:bg-[#313346] gap-2 items-center justify-between hover:bg-[#313346]"
+				class="group/link flex flex-row h-full w-full p-2 focus:outline-none focus:bg-[#313346] gap-2 items-center justify-between hover:bg-[#313346]"
 				href="mailto:dillon.mulroy@gmail.com"
 				target="_blank"
 			>
 				<span class="flex flex-row gap-4 items-center"
-					><MailPlusIcon class="group-hover:text-ctp-mauve" />Contact Me</span
+					><MailPlusIcon
+						class="group-hover:text-ctp-mauve group-focus/link:text-ctp-mauve"
+					/>Contact Me</span
 				>gcm</a
 			>
 		</li>
