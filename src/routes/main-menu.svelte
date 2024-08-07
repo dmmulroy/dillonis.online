@@ -13,8 +13,10 @@
 
 <main class="flex flex-col mx-auto mt-16 gap-5 items-center text-ctp-text">
 	<Ascii />
-	<p class="text-center text-3xl text-ctp-crust bg-mode-color p-3">software engineer @ vercel ▲</p>
-	<ul class="flex flex-col w-1/2 gap-2 mt-8">
+	<p class="text-center lg:text-3xl text-xl text-ctp-crust bg-mode-color p-3">
+		software engineer @ vercel ▲
+	</p>
+	<ul class="flex flex-col w-1/2 gap-2 lg:mt-8 mt-2 mb-8 lg:text-[22px] text-base">
 		<li
 			class="group p-1 cursor-none hover:cursor-pointer flex flex-row gap-2 items-center justify-between hover:bg-[#313346]"
 		>

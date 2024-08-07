@@ -4,9 +4,9 @@ module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		extend: {
-      colors: {
-        "mode-color": "var(--mode-color)"
-      },
+			colors: {
+				'mode-color': 'var(--mode-color)'
+			},
 			fontFamily: {
 				defaultMono: [...fontFamily.mono],
 				mono: ['JetBrains Mono', ...fontFamily.mono]
