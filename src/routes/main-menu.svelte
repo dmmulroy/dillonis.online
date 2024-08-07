@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
 	import Ascii from './ascii.svelte';
 	import {
 		Github,
@@ -11,7 +12,10 @@
 	} from 'lucide-svelte';
 </script>
 
-<main class="flex flex-col mx-auto mt-16 gap-5 items-center text-ctp-text">
+<main
+	id="main"
+	class="flex flex-col mx-auto mt-16 gap-5 items-center text-ctp-text"
+>
 	<Ascii />
 	<p class="text-center lg:text-3xl text-xl text-ctp-crust bg-mode-color p-3">
 		software engineer @ vercel ▲
