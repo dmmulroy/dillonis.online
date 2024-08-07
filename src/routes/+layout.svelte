@@ -11,7 +11,7 @@
 	if (browser) {
 		let focusedItemIdx = $state<number>();
 
-		window.addEventListener('keypress', (event) => {
+		window.addEventListener('keydown', (event) => {
 			const root = document.querySelector(':root');
 			const github = document.getElementById('github');
 			const twitter = document.getElementById('twitter');
