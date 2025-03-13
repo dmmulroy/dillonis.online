@@ -69,7 +69,7 @@
 			<a
 				id="youtube"
 				class="group/link flex flex-row h-full w-full p-2 focus:outline-none focus:bg-[#313346] gap-2 items-center justify-between hover:bg-[#313346]"
-				href="https://youtube.com/dmmulroy"
+				href="https://www.youtube.com/@dmmulroy"
 				target="_blank"
 			>
 				<span class="flex flex-row gap-4 items-center"
