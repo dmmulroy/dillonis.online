@@ -1,8 +1,9 @@
-import { browser } from '$app/environment';
+import { writable } from 'svelte/store';
 
 export type Mode = 'NORMAL' | 'INSERT' | 'VISUAL';
 
 let mode = $state<Mode>('NORMAL');
+let currentSequence = $state<string>('');
 
 export function getMode(): Mode {
 	return mode;
@@ -11,7 +12,11 @@ export function getMode(): Mode {
 export function setMode(newMode: Mode): void {
 	mode = newMode;
 
-	if (browser) {
+	// Reset sequence if not in INSERT mode
+		if (mode !== 'INSERT') {
+			currentSequence = '';
+		}
+
 		const root = document.querySelector(':root');
 
 		if (!root) {
@@ -34,5 +39,22 @@ export function setMode(newMode: Mode): void {
 				break;
 			}
 		}
-	}
+}
+
+// Export a getter function for the sequence state
+export function getCurrentShortcutSequence(): string {
+	return currentSequence;
+}
+
+// Functions to modify the sequence
+export function updateShortcutSequence(key: string): void {
+	currentSequence += key;
+}
+
+export function resetShortcutSequence(): void {
+	currentSequence = '';
+}
+
+export function removeLastShortcutChar(): void {
+	currentSequence = currentSequence.slice(0, -1);
 }

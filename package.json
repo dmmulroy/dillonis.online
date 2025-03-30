@@ -1,41 +1,41 @@
 {
-	"name": "dillonis.online",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --check .",
-		"format": "prettier --write ."
-	},
-	"devDependencies": {
-		"@catppuccin/tailwindcss": "^0.1.6",
-		"@sveltejs/adapter-auto": "^3.0.0",
-		"@sveltejs/kit": "^2.0.0",
-		"@sveltejs/vite-plugin-svelte": "^3.0.0",
-		"autoprefixer": "^10.4.19",
-		"postcss": "^8.4.40",
-		"prettier": "^3.1.1",
-		"prettier-plugin-svelte": "^3.1.2",
-		"svelte": "^5.0.0-next.1",
-		"svelte-adapter-bun": "^0.5.2",
-		"svelte-check": "^3.6.0",
-		"tailwindcss": "^3.4.7",
-		"typescript": "^5.0.0",
-		"vite": "^5.0.3",
-		"vitest": "^2.0.4"
-	},
-	"type": "module",
-	"dependencies": {
-		"@sveltejs/adapter-vercel": "^5.4.1",
-		"@vercel/speed-insights": "^1.0.12",
-		"lucide-svelte": "^0.417.0"
-	},
-	"trustedDependencies": [
-		"@vercel/speed-insights",
-		"svelte-preprocess"
-	]
+  "name": "dillonis.online",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "lint": "prettier --check .",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@catppuccin/tailwindcss": "^0.1.6",
+    "@sveltejs/adapter-auto": "^5.0.0",
+    "@sveltejs/kit": "^2.20.2",
+    "@sveltejs/vite-plugin-svelte": "^5.0.3",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "prettier": "^3.5.3",
+    "prettier-plugin-svelte": "^3.3.3",
+    "svelte": "^5.25.3",
+    "svelte-adapter-bun": "^0.5.2",
+    "svelte-check": "^4.1.5",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.3",
+    "vitest": "^3.0.9"
+  },
+  "type": "module",
+  "dependencies": {
+    "@sveltejs/adapter-vercel": "^5.6.3",
+    "@vercel/speed-insights": "^1.2.0",
+    "lucide-svelte": "^0.485.0"
+  },
+  "trustedDependencies": [
+    "@vercel/speed-insights",
+    "svelte-preprocess"
+  ]
 }

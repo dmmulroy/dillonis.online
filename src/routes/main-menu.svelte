@@ -10,6 +10,18 @@
 		TwitterIcon,
 		YoutubeIcon
 	} from 'lucide-svelte';
+	import { getCurrentShortcutSequence } from './mode.svelte.ts';
+
+	// Define shortcuts locally for rendering the text easily
+	const shortcuts = {
+		github: 'ggh',
+		twitter: 'gx',
+		twitch: 'gt',
+		youtube: 'gyt',
+		linkedin: 'gli',
+		talks: 'gct',
+		email: 'gcm'
+	};
 </script>
 
 <main
@@ -34,9 +46,15 @@
 					><Github
 						class="group-hover:text-[#2dba4e] group-focus/link:text-[#2dba4e]"
 					/>GitHub</span
-				>ggh</a
-			>
-		</li>
+				>
+				<span>
+					{#each shortcuts.github.split('') as char, i}
+						{@const currentShortcutSequence = getCurrentShortcutSequence()}
+						<span class={i < currentShortcutSequence.length && char === currentShortcutSequence[i] ? 'bg-ctp-subtext0 text-ctp-base' : ''}>{char}</span>
+				{/each}
+			</span></a
+		>
+	</li>
 		<li class="group cursor-none hover:cursor-pointer">
 			<a
 				id="twitter"
@@ -48,7 +66,13 @@
 					><TwitterIcon
 						class="group-hover:text-[#1D9BF0] group-focus/link:text-[#1D9BF0]"
 					/>Twitter/𝕏</span
-				>gx</a
+				>
+				<span>
+					{#each shortcuts.twitter.split('') as char, i}
+						{@const currentShortcutSequence = getCurrentShortcutSequence()}
+						<span class={i < currentShortcutSequence.length && char === currentShortcutSequence[i] ? 'bg-ctp-subtext0 text-ctp-base' : ''}>{char}</span>
+					{/each}
+				</span></a
 			>
 		</li>
 		<li class="group cursor-none hover:cursor-pointer">
@@ -62,21 +86,33 @@
 					><TwitchIcon
 						class="group-hover:text-[#6441a5] group-focus/link:text-[#6441a5]"
 					/>Twitch</span
-				>gt</a
+				>
+				<span>
+					{#each shortcuts.twitch.split('') as char, i}
+						{@const currentShortcutSequence = getCurrentShortcutSequence()}
+						<span class={i < currentShortcutSequence.length && char === currentShortcutSequence[i] ? 'bg-ctp-subtext0 text-ctp-base' : ''}>{char}</span>
+					{/each}
+				</span></a
 			>
 		</li>
 		<li class="group cursor-none hover:cursor-pointer">
 			<a
 				id="youtube"
 				class="group/link flex flex-row h-full w-full p-2 focus:outline-none focus:bg-[#313346] gap-2 items-center justify-between hover:bg-[#313346]"
-				href="https://youtube.com/dmmulroy"
+				href="https://www.youtube.com/@dmmulroy"
 				target="_blank"
 			>
 				<span class="flex flex-row gap-4 items-center"
 					><YoutubeIcon
 						class="group-hover:text-[#FF1A1A] group-focus/link:text-[#FF1A1A]"
 					/>YouTube</span
-				>gyt</a
+				>
+				<span>
+					{#each shortcuts.youtube.split('') as char, i}
+						{@const currentShortcutSequence = getCurrentShortcutSequence()}
+						<span class={i < currentShortcutSequence.length && char === currentShortcutSequence[i] ? 'bg-ctp-subtext0 text-ctp-base' : ''}>{char}</span>
+					{/each}
+				</span></a
 			>
 		</li>
 		<li class="group cursor-none hover:cursor-pointer">
@@ -90,10 +126,16 @@
 					><LinkedinIcon
 						class="group-hover:text-[#0a66c2] group-focus/link:text-[#0a66c2]"
 					/>LinkedIn</span
-				>gli
+				>
+				<span>
+					{#each shortcuts.linkedin.split('') as char, i}
+						{@const currentShortcutSequence = getCurrentShortcutSequence()}
+						<span class={i < currentShortcutSequence.length && char === currentShortcutSequence[i] ? 'bg-ctp-subtext0 text-ctp-base' : ''}>{char}</span>
+					{/each}
+				</span>
 			</a>
 		</li>
-		<li class="group cursor-none hover:cursor-pointer">
+		<!-- <li class="group cursor-none hover:cursor-pointer">
 			<a
 				id="talks"
 				class="group/link flex flex-row h-full w-full p-2 focus:outline-none focus:bg-[#313346] gap-2 items-center justify-between hover:bg-[#313346]"
@@ -104,9 +146,15 @@
 					><MicVocalIcon
 						class="group-hover:text-ctp-peach group-focus/link:text-ctp-peach "
 					/>Conference Talks</span
-				>gct</a
+				>
+				<span>
+					{#each shortcuts.talks.split('') as char, i}
+						{@const currentShortcutSequence = getCurrentShortcutSequence()}
+						<span class={i < currentShortcutSequence.length && char === currentShortcutSequence[i] ? 'bg-ctp-subtext0 text-ctp-base' : ''}>{char}</span>
+					{/each}
+				</span></a
 			>
-		</li>
+		</li> -->
 		<li class="group cursor-none hover:cursor-pointer">
 			<a
 				id="email"
@@ -118,7 +166,13 @@
 					><MailPlusIcon
 						class="group-hover:text-ctp-mauve group-focus/link:text-ctp-mauve"
 					/>Contact Me</span
-				>gcm</a
+				>
+				<span>
+					{#each shortcuts.email.split('') as char, i}
+						{@const currentShortcutSequence = getCurrentShortcutSequence()}
+						<span class={i < currentShortcutSequence.length && char === currentShortcutSequence[i] ? 'bg-ctp-subtext0 text-ctp-base' : ''}>{char}</span>
+					{/each}
+				</span></a
 			>
 		</li>
 	</ul>
