@@ -2,6 +2,7 @@
 	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
 	import { type Snippet } from 'svelte';
 	import { browser } from '$app/environment';
+	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import '../app.css';
 	import {
 		getMode,
@@ -238,6 +239,7 @@
 		});
 	}
 
+	injectAnalytics();
 	injectSpeedInsights();
 </script>
 
