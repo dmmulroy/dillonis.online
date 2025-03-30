@@ -7,6 +7,7 @@
 	import {
 		getMode,
 		setMode,
+		setFocusedIndex,
 		getCurrentShortcutSequence,
 		updateShortcutSequence,
 		resetShortcutSequence,
@@ -18,6 +19,7 @@
 
 	if (browser) {
 		let focusedItemIdx = $state<number>();
+		setFocusedIndex(undefined); // Initialize focused index state
 		let lastKeyPressTime = $state<number>(0); // Track last key press time
 
 		// Helper function to get menu items
@@ -75,6 +77,7 @@
 					if (focusedItemIdx === undefined) {
 						menuItems[0]?.focus();
 						focusedItemIdx = 0;
+						setFocusedIndex(0);
 						return;
 					}
 
@@ -83,14 +86,18 @@
 							return;
 						}
 
-						menuItems[++focusedItemIdx]?.focus();
+						focusedItemIdx++;
+						setFocusedIndex(focusedItemIdx);
+						menuItems[focusedItemIdx]?.focus();
 						return;
 					}
 
 					if (focusedItemIdx === 0) {
 						return;
 					}
-					menuItems[--focusedItemIdx]?.focus();
+					focusedItemIdx--;
+					setFocusedIndex(focusedItemIdx);
+					menuItems[focusedItemIdx]?.focus();
 					return;
 				}
 			}
@@ -111,11 +118,14 @@
 			if (mode === 'INSERT' && (event.key === 'Escape' || event.key.toLowerCase() === 'n')) {
 				event.preventDefault();
 				resetShortcutSequence();
-				setMode('NORMAL');
-				// Re-focus previously focused item if applicable
+				// Re-focus previously focused item if applicable and update index state
 				if (focusedItemIdx !== undefined) {
 					menuItems[focusedItemIdx]?.focus();
+					setFocusedIndex(focusedItemIdx);
+				} else {
+					setFocusedIndex(undefined);
 				}
+				setMode('NORMAL');
 				return;
 			}
 
@@ -134,6 +144,7 @@
 					if (focusedItemIdx === undefined) {
 						menuItems[0]?.focus();
 						focusedItemIdx = 0;
+						setFocusedIndex(0);
 						return;
 					}
 
@@ -142,14 +153,18 @@
 							return;
 						}
 
-						menuItems[++focusedItemIdx]?.focus();
+						focusedItemIdx++;
+						setFocusedIndex(focusedItemIdx);
+						menuItems[focusedItemIdx]?.focus();
 						return;
 					}
 
 					if (focusedItemIdx === 0) {
 						return;
 					}
-					menuItems[--focusedItemIdx]?.focus();
+					focusedItemIdx--;
+					setFocusedIndex(focusedItemIdx);
+					menuItems[focusedItemIdx]?.focus();
 					return;
 				}
 			}
@@ -159,9 +174,10 @@
 				if (mode === 'NORMAL') {
 					if (focusedItemIdx !== undefined) {
 						menuItems[focusedItemIdx]?.blur();
-						// Optional: focusedItemIdx = undefined;
+						// Optional: focusedItemIdx = undefined; // Keep index for potential re-focus
 					}
 					setMode('INSERT');
+					setFocusedIndex(undefined); // Clear focused index when entering insert mode
 					resetShortcutSequence(); // Ensure sequence is reset
 					event.preventDefault();
 					return;
@@ -173,8 +189,10 @@
 				if (mode === 'NORMAL') {
 					if (focusedItemIdx !== undefined) {
 						menuItems[focusedItemIdx]?.blur();
+						// focusedItemIdx remains for potential re-focus on exit
 					}
 					setMode('VISUAL');
+					setFocusedIndex(undefined); // Clear focused index when entering visual mode
 					event.preventDefault();
 					return;
 				}
@@ -193,8 +211,9 @@
 				if (potentialStarters.length > 0) {
 					if (focusedItemIdx !== undefined) {
 						menuItems[focusedItemIdx]?.blur();
-						focusedItemIdx = undefined; // Clear focus
+						// focusedItemIdx remains for potential re-focus on exit
 					}
+					setFocusedIndex(undefined); // Clear focused index when starting shortcut
 					setMode('INSERT');
 					updateShortcutSequence(event.key.toLowerCase());
 					event.preventDefault();
@@ -203,6 +222,7 @@
 					if (fullMatchUrl) {
 						window.open(fullMatchUrl, '_blank');
 						resetShortcutSequence();
+						// No need to setFocusedIndex here, already undefined
 						setMode('NORMAL');
 					}
 					return;
@@ -223,6 +243,7 @@
 					if (fullMatchUrl) {
 						window.open(fullMatchUrl, '_blank');
 						resetShortcutSequence();
+						// No need to setFocusedIndex here, already undefined
 						setMode('NORMAL');
 					}
 				} else {

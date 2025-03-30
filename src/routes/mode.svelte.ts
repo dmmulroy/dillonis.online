@@ -4,6 +4,7 @@ export type Mode = 'NORMAL' | 'INSERT' | 'VISUAL';
 
 let mode = $state<Mode>('NORMAL');
 let currentSequence = $state<string>('');
+let focusedIndex = $state<number | undefined>(undefined);
 
 export function getMode(): Mode {
 	return mode;
@@ -57,4 +58,14 @@ export function resetShortcutSequence(): void {
 
 export function removeLastShortcutChar(): void {
 	currentSequence = currentSequence.slice(0, -1);
+}
+
+// Export a getter function for the focused index state
+export function getFocusedIndex(): number | undefined {
+	return focusedIndex;
+}
+
+// Function to modify the focused index
+export function setFocusedIndex(index: number | undefined): void {
+	focusedIndex = index;
 }
