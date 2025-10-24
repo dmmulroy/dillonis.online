@@ -30,7 +30,7 @@
 >
 	<Ascii />
 	<p class="text-center lg:text-3xl text-xl text-ctp-crust bg-mode-color p-3">
-		software engineer @ vercel ▲
+		software engineer
 	</p>
 	<ul
 		class="flex flex-col lg:w-1/2 w-3/4 gap-2 lg:mt-8 mt-2 mb-8 lg:text-[22px] text-base"
@@ -50,11 +50,16 @@
 				<span>
 					{#each shortcuts.github.split('') as char, i}
 						{@const currentShortcutSequence = getCurrentShortcutSequence()}
-						<span class={i < currentShortcutSequence.length && char === currentShortcutSequence[i] ? 'bg-ctp-subtext0 text-ctp-base' : ''}>{char}</span>
-				{/each}
-			</span></a
-		>
-	</li>
+						<span
+							class={i < currentShortcutSequence.length &&
+							char === currentShortcutSequence[i]
+								? 'bg-ctp-subtext0 text-ctp-base'
+								: ''}>{char}</span
+						>
+					{/each}
+				</span></a
+			>
+		</li>
 		<li class="group cursor-none hover:cursor-pointer">
 			<a
 				id="twitter"
@@ -70,7 +75,12 @@
 				<span>
 					{#each shortcuts.twitter.split('') as char, i}
 						{@const currentShortcutSequence = getCurrentShortcutSequence()}
-						<span class={i < currentShortcutSequence.length && char === currentShortcutSequence[i] ? 'bg-ctp-subtext0 text-ctp-base' : ''}>{char}</span>
+						<span
+							class={i < currentShortcutSequence.length &&
+							char === currentShortcutSequence[i]
+								? 'bg-ctp-subtext0 text-ctp-base'
+								: ''}>{char}</span
+						>
 					{/each}
 				</span></a
 			>
@@ -90,7 +100,12 @@
 				<span>
 					{#each shortcuts.twitch.split('') as char, i}
 						{@const currentShortcutSequence = getCurrentShortcutSequence()}
-						<span class={i < currentShortcutSequence.length && char === currentShortcutSequence[i] ? 'bg-ctp-subtext0 text-ctp-base' : ''}>{char}</span>
+						<span
+							class={i < currentShortcutSequence.length &&
+							char === currentShortcutSequence[i]
+								? 'bg-ctp-subtext0 text-ctp-base'
+								: ''}>{char}</span
+						>
 					{/each}
 				</span></a
 			>
@@ -110,7 +125,12 @@
 				<span>
 					{#each shortcuts.youtube.split('') as char, i}
 						{@const currentShortcutSequence = getCurrentShortcutSequence()}
-						<span class={i < currentShortcutSequence.length && char === currentShortcutSequence[i] ? 'bg-ctp-subtext0 text-ctp-base' : ''}>{char}</span>
+						<span
+							class={i < currentShortcutSequence.length &&
+							char === currentShortcutSequence[i]
+								? 'bg-ctp-subtext0 text-ctp-base'
+								: ''}>{char}</span
+						>
 					{/each}
 				</span></a
 			>
@@ -130,7 +150,12 @@
 				<span>
 					{#each shortcuts.linkedin.split('') as char, i}
 						{@const currentShortcutSequence = getCurrentShortcutSequence()}
-						<span class={i < currentShortcutSequence.length && char === currentShortcutSequence[i] ? 'bg-ctp-subtext0 text-ctp-base' : ''}>{char}</span>
+						<span
+							class={i < currentShortcutSequence.length &&
+							char === currentShortcutSequence[i]
+								? 'bg-ctp-subtext0 text-ctp-base'
+								: ''}>{char}</span
+						>
 					{/each}
 				</span>
 			</a>
@@ -170,7 +195,12 @@
 				<span>
 					{#each shortcuts.email.split('') as char, i}
 						{@const currentShortcutSequence = getCurrentShortcutSequence()}
-						<span class={i < currentShortcutSequence.length && char === currentShortcutSequence[i] ? 'bg-ctp-subtext0 text-ctp-base' : ''}>{char}</span>
+						<span
+							class={i < currentShortcutSequence.length &&
+							char === currentShortcutSequence[i]
+								? 'bg-ctp-subtext0 text-ctp-base'
+								: ''}>{char}</span
+						>
 					{/each}
 				</span></a
 			>
