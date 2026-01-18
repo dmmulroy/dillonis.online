@@ -160,26 +160,30 @@
 				</span>
 			</a>
 		</li>
-		<!-- <li class="group cursor-none hover:cursor-pointer">
+		<li class="group cursor-none hover:cursor-pointer">
 			<a
 				id="talks"
 				class="group/link flex flex-row h-full w-full p-2 focus:outline-none focus:bg-[#313346] gap-2 items-center justify-between hover:bg-[#313346]"
-				href="https://dillonis.online/talks"
-				target="_blank"
+				href="/talks"
 			>
 				<span class="flex flex-row gap-4 items-center"
 					><MicVocalIcon
-						class="group-hover:text-ctp-peach group-focus/link:text-ctp-peach "
+						class="group-hover:text-ctp-peach group-focus/link:text-ctp-peach"
 					/>Conference Talks</span
 				>
 				<span>
 					{#each shortcuts.talks.split('') as char, i}
 						{@const currentShortcutSequence = getCurrentShortcutSequence()}
-						<span class={i < currentShortcutSequence.length && char === currentShortcutSequence[i] ? 'bg-ctp-subtext0 text-ctp-base' : ''}>{char}</span>
+						<span
+							class={i < currentShortcutSequence.length &&
+							char === currentShortcutSequence[i]
+								? 'bg-ctp-subtext0 text-ctp-base'
+								: ''}>{char}</span
+						>
 					{/each}
 				</span></a
 			>
-		</li> -->
+		</li>
 		<li class="group cursor-none hover:cursor-pointer">
 			<a
 				id="email"
