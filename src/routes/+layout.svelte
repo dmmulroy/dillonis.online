@@ -23,7 +23,7 @@
 		let lastKeyPressTime = $state<number>(0); // Track last key press time
 
 		// Helper function to get menu items
-		function getMenuItems(): (HTMLElement | null)[] {
+		function getMenuItems(): HTMLElement[] {
 			// Query all menu item links within the list
 			return Array.from(document.querySelectorAll('#main ul > li > a'));
 		}
@@ -44,31 +44,9 @@
 				lastKeyPressTime = currentTime; // Update last key press time
 			}
 
-			const github = document.getElementById('github');
-			const twitter = document.getElementById('twitter');
-			const twitch = document.getElementById('twitch');
-			const youtube = document.getElementById('youtube');
-			const linkedin = document.getElementById('linkedin');
-			const email = document.getElementById('email'); // Corrected
+			const menuItems = getMenuItems();
 
-			const menuItems = [
-				github,
-				twitter,
-				twitch,
-				youtube,
-				linkedin,
-				email // Corrected
-			];
-
-			if (
-				!root ||
-				!github ||
-				!twitter ||
-				!twitch ||
-				!youtube ||
-				!linkedin ||
-				!email
-			) {
+			if (!root || menuItems.length === 0) {
 				return;
 			}
 
@@ -108,6 +86,7 @@
 				gt: 'https://twitch.tv/dmmulroy', // Corrected
 				gyt: 'https://www.youtube.com/@dmmulroy',
 				gli: 'https://www.linkedin.com/in/dillon-mulroy',
+				gct: '/talks',
 				gcm: 'mailto:dillon.mulroy@gmail.com'
 			};
 			const shortcutKeys = Object.keys(shortcuts);
@@ -220,7 +199,11 @@
 					// Check if the single key is already a full shortcut using the getter
 					const fullMatchUrl = shortcuts[getCurrentShortcutSequence()];
 					if (fullMatchUrl) {
-						window.open(fullMatchUrl, '_blank');
+						if (fullMatchUrl.startsWith('/')) {
+							window.location.href = fullMatchUrl;
+						} else {
+							window.open(fullMatchUrl, '_blank');
+						}
 						resetShortcutSequence();
 						// No need to setFocusedIndex here, already undefined
 						setMode('NORMAL');
@@ -241,7 +224,11 @@
 
 					const fullMatchUrl = shortcuts[getCurrentShortcutSequence()];
 					if (fullMatchUrl) {
-						window.open(fullMatchUrl, '_blank');
+						if (fullMatchUrl.startsWith('/')) {
+							window.location.href = fullMatchUrl;
+						} else {
+							window.open(fullMatchUrl, '_blank');
+						}
 						resetShortcutSequence();
 						// No need to setFocusedIndex here, already undefined
 						setMode('NORMAL');
