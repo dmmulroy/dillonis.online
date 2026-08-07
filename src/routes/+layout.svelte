@@ -83,7 +83,7 @@
 			const shortcuts: Record<string, string> = {
 				ggh: 'https://github.com/dmmulroy',
 				gx: 'https://x.com/dillon_mulroy',
-				gt: 'https://twitch.tv/dmmulroy', // Corrected
+				gt: 'https://twitch.tv/dillon', // Corrected
 				gyt: 'https://www.youtube.com/@dmmulroy',
 				gli: 'https://www.linkedin.com/in/dillon-mulroy',
 				gct: '/talks',
